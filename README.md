@@ -5,3 +5,4 @@ Just a random stuff
 ![blur-hover-effect](assets/y.gif)
 
 ## Expand Hover Effect
+![expand-hover-effect](assets/y2.gif)
