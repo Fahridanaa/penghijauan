@@ -1,0 +1,94 @@
+:root {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#container {
+  background-color: #0c0f20;
+  min-height: 100vh;
+  margin-inline: auto;
+  padding-inline: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+#wrapper {
+  position: relative;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+#wrapper .accordion {
+  display: flex;
+  gap: 0.2rem;
+  padding: 0.5rem;
+  flex-direction: column;
+}
+
+@media (min-width: 45em) {
+  #wrapper .accordion {
+    flex-direction: row;
+  }
+}
+
+#wrapper .accordion * {
+  margin: 0;
+}
+
+#wrapper .accordion .accordion-panel {
+  position: relative;
+  overflow: hidden;
+  transition: 0.5s cubic-bezier(0.74, -0.74, 0.3, 1.54);
+  width: 12rem;
+  height: 32rem;
+}
+
+.accordion .accordion-panel img {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: width 0.5s ease;
+  z-index: 0;
+}
+
+.accordion .accordion-panel .accordion-content {
+  position: absolute;
+  color: #dddddd;
+  padding: 20px;
+  opacity: 0;
+  bottom: 0;
+  z-index: -1;
+  transform: translateX(-10%);
+  transition: all 0.5s ease;
+  pointer-events: none;
+}
+
+#wrapper .accordion-panel:hover {
+  width: 24rem;
+}
+
+.accordion .accordion-panel:hover .accordion-content {
+  transform: translateX(0);
+  opacity: 1;
+  z-index: 0;
+}
+
+.accordion:hover .accordion-panel:not(:hover) {
+  filter: brightness(0.4);
+}
