@@ -9,3 +9,6 @@ Just a random stuff
 
 ## Gallery
 ![gallery](assets/gallery.png)
+
+## Selamat Pagi
+![ohayou](assets/ohayou.gif)
