@@ -1,0 +1,190 @@
+p {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+#container.selamat-pagi {
+  padding: 0;
+  position: relative;
+  background-image: url("../assets/img/310838.jpg");
+  background-repeat: no-repeat;
+  object-fit: fill;
+  align-items: normal;
+  justify-content: normal;
+}
+
+.wrapper {
+  position: relative;
+  display: flex;
+  flex: 1;
+}
+
+.content {
+  flex: 1;
+  display: grid;
+  z-index: 2;
+  grid-template-areas:
+    " row1   row1   row1"
+    " row2   row2   ."
+    " row2   row2   ."
+    " row3   row3   .";
+}
+
+.row {
+  display: flex;
+}
+
+#row1 {
+  grid-area: row1;
+  flex-direction: column;
+  align-items: center;
+}
+
+#row1 p#asl {
+  color: hotpink;
+  text-shadow: 2px 2px 4px #33ff00;
+  -webkit-text-stroke: 2px rgb(229, 255, 0);
+  animation: slideInYTop 2s forwards;
+}
+
+#row1 p#slm {
+  color: darkblue;
+  text-shadow: 2px 2px 4px #33ff00;
+  -webkit-text-stroke: 2px rgb(229, 255, 0);
+  animation: rotateIn 2s forwards;
+}
+
+#row2 {
+  grid-area: row2;
+}
+
+#row2 p {
+  margin-left: 3rem;
+  color: rgb(9, 255, 0);
+  text-shadow: 2px 2px 4px #ff0000;
+  -webkit-text-stroke: 2px rgb(4, 29, 253);
+  animation: scaleUp 3s forwards;
+}
+
+#row3 {
+  grid-area: row3;
+  justify-content: flex-start;
+  padding: 1rem;
+}
+
+#row3 p {
+  color: rgb(255, 0, 255);
+  text-shadow: 2px 2px 4px #eeff00;
+  -webkit-text-stroke: 2px rgb(253, 62, 4);
+  transform: rotate(-10deg);
+  animation: rotateIn2 8s forwards;
+}
+
+#img-wrapper {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transition: 0.5s ease;
+  animation: slideInXRight 5s forwards;
+  opacity: 0;
+  z-index: 0;
+}
+
+#img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translateY(4%);
+}
+
+/* Particle container */
+#particle-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Ensure particles don't interfere with other elements */
+  overflow: hidden;
+  z-index: 9999; /* Ensure particles are on top */
+}
+
+.particle {
+  position: absolute;
+  opacity: 0.2;
+  width: 0.4rem;
+  height: 0.4rem;
+  background-color: rgba(167, 238, 139, 0.8);
+  border-radius: 50%;
+  animation: moveParticle 10s linear infinite;
+}
+
+@keyframes moveParticle {
+  0% {
+    transform: translateY(-100%) translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) translateX(calc(100vw * var(--random-x)));
+    opacity: 0;
+  }
+}
+
+@keyframes slideInXRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInYTop {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes rotateIn {
+  from {
+    transform: rotate(0deg);
+    opacity: 0;
+  }
+  to {
+    transform: rotate(360deg);
+    opacity: 1;
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes rotateIn2 {
+  0% {
+    transform: rotate(360deg);
+    opacity: 0;
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-15deg);
+    opacity: 1;
+  }
+}
