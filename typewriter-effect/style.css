@@ -1,0 +1,47 @@
+html {
+	color-scheme: dark light;
+}
+
+body {
+	height: 100vh;
+}
+
+#type-effect {
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#type-effect div {
+	display: inline;
+}
+
+#type-effect p {
+	font-size: 1.5em;
+	font-family: "Courier New", Courier, monospace;
+	overflow: hidden;
+	white-space: nowrap;
+	color: #fff;
+	border-right: 1px solid;
+	animation: type 4s steps(26) forwards, blink 1s infinite step-end;
+}
+
+@keyframes type {
+	from {
+		width: 0;
+	}
+	to {
+		width: 100%;
+	}
+}
+
+@keyframes blink {
+	from,
+	to {
+		border-color: transparent;
+	}
+	50% {
+		border-color: #fff;
+	}
+}
